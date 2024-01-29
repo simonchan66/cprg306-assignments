@@ -71,12 +71,14 @@ export default function ItemList() {
         <div className="grid grid-cols-1 gap-6">
         
         <div className="space-y-4">
+
       {items.map(item => (
         <Item 
           key={item.name} 
           className="bg-white p-4 rounded-lg shadow"
           {...item} 
         />
+        
       ))}
     </div>
 

@@ -9,7 +9,7 @@ export default function NewItem({onAddItem}) {
     function handleSubmit (event){
         event.preventDefault();
         const item = { name, quantity, category };
-        alert("Added item is " + item.name + " " + item.quantity + " " + item.category );
+        // alert("Added item is " + item.name + " " + item.quantity + " " + item.category );
         onAddItem(item);
         setName("");
         setQuantity(1);

@@ -25,6 +25,11 @@ export default function Page() {
            Click to go to WEEK-5
           </Link>
         </h2>
+        <h2 className="text-xl" >
+          <Link href="/week-6" className="text-blue-600 hover:text-blue-800 visited:text-purple-600">
+           Click to go to WEEK-6
+          </Link>
+        </h2>
       </div>
     </main>
   );

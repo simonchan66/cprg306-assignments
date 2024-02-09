@@ -4,13 +4,12 @@ import { useState } from "react";
 
 export default function ItemList({items}) {
 const [sortBy, setSortBy] = useState("name");
-const itemsCopy = items;
+const itemsCopy = [...items];
 
 const handleSort = (sortBy) => {
   setSortBy(sortBy);
-  itemsCopy.sort((a, b) => {if (a[sortBy] < b[sortBy]) {return -1;} if (a[sortBy] > b[sortBy]) {return 1;} return 0;}); 
 };
-
+itemsCopy.sort((a, b) => {if (a[sortBy] < b[sortBy]) {return -1;} if (a[sortBy] > b[sortBy]) {return 1;} return 0;}); 
 
 
 return (

@@ -6,7 +6,25 @@ import itemsData from "./items.json";
 import { useState } from "react";
 import MealIdeas from "./meal-ideas";
 
+import { useUserAuth } from "../_utils/auth-context";
+
 export default function Page() {
+  const { user } = useUserAuth();
+
+  if (!user) {
+    return (
+      <main className="flex justify-center items-center h-screen">
+        <div className="text-center">
+          <p className="mb-4">You must be logged in to view this page.</p>
+          <Link href="/week-8">
+            <h2 className="text-blue-600 hover:underline">Go to login page</h2>
+          </Link>
+        </div>
+      </main>
+    );
+  }
+
+
   const[items, setItems] = useState(itemsData);
   const handelAddItem = (item) => {
     setItems([...items, item]);
@@ -24,7 +42,7 @@ function handleItemSelect(item) {
   return (
 
     <main>
-      <h1>WEEK 7 Assignment - Here is my shopping List</h1>
+      <h1>WEEK 8 Assignment - Learn Oauth</h1>
       <div className = "flex">
       <div className = "flex-1"> 
       <NewItem onAddItem={handelAddItem} />

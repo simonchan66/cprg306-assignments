@@ -10,7 +10,8 @@ import { useUserAuth } from "../_utils/auth-context";
 
 export default function Page() {
   const { user } = useUserAuth();
-
+  const[items, setItems] = useState(itemsData);
+  const[selectedItemName, setSelectedItemName] = useState(null);
   if (!user) {
     return (
       <main className="flex justify-center items-center h-screen">
@@ -25,11 +26,11 @@ export default function Page() {
   }
 
 
-  const[items, setItems] = useState(itemsData);
+
   const handelAddItem = (item) => {
     setItems([...items, item]);
   };
-  const[selectedItemName, setSelectedItemName] = useState(null);
+
 function handleItemSelect(item) {
   console.log(item);
   const cleanName = item.replace(/[\uD83C-\uDBFF\uDC00-\uDFFF]+/g, '')

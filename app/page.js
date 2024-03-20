@@ -40,6 +40,11 @@ export default function Page() {
            Click to go to WEEK-8
           </Link>
         </h2>
+        <h2 className="text-xl" >
+          <Link href="/week-10" className="text-blue-600 hover:text-blue-800 visited:text-purple-600">
+           Click to go to WEEK-10
+          </Link>
+        </h2>
       </div>
     </main>
   );
